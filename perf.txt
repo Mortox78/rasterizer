@@ -1,0 +1,258 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  us/call  us/call  name    
+ 93.12      0.27     0.27     3148    85.79    85.79  Rasterizer::draw_triangle(Vertex const*, FrameBuffer*, std::vector<Light, std::allocator<Light> > const&, Texture const*) const
+  3.45      0.28     0.01                             Rasterizer::RenderScene(Scene*, FrameBuffer*, Camera const&)
+  3.45      0.29     0.01                             FrameBuffer::FrameBuffer(SDL_Renderer*, unsigned int const&, unsigned int const&)
+  0.00      0.29     0.00      404     0.00     0.00  Light::~Light()
+  0.00      0.29     0.00      374     0.00     0.00  Light::Light(Light const&)
+  0.00      0.29     0.00       19     0.00     0.00  FrameBuffer::display(SDL_Renderer*)
+  0.00      0.29     0.00       19     0.00     0.00  Camera::manage_cam_rotation(float const&)
+  0.00      0.29     0.00       19     0.00     0.00  Camera::manage_cam_translation(float const&)
+  0.00      0.29     0.00       15     0.00     0.00  void std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int const&>(int const&)
+  0.00      0.29     0.00       14     0.00     0.00  Entity::~Entity()
+  0.00      0.29     0.00       10     0.00     0.00  void std::vector<Vertex, std::allocator<Vertex> >::_M_emplace_back_aux<Vertex>(Vertex&&)
+  0.00      0.29     0.00        7     0.00     0.00  void std::vector<Vec2, std::allocator<Vec2> >::_M_emplace_back_aux<Vec2 const&>(Vec2 const&)
+  0.00      0.29     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN10RasterizerC2Ev
+  0.00      0.29     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN11FrameBufferC2EP12SDL_RendererRKjS3_
+  0.00      0.29     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN4MeshC2Ev
+  0.00      0.29     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN5LightC2ERK4Vec3fff
+  0.00      0.29     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN5SceneD2Ev
+  0.00      0.29     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN6CameraC2Ev
+  0.00      0.29     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN6EntityC2Ev
+  0.00      0.29     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN7TextureC2EPKc
+  0.00      0.29     0.00        1     0.00     0.00  _GLOBAL__sub_I_main
+  0.00      0.29     0.00        1     0.00     0.00  FrameBuffer::create_ViewPort()
+  0.00      0.29     0.00        1     0.00     0.00  Mesh::CreateCubeVertices(Mesh*)
+  0.00      0.29     0.00        1     0.00     0.00  Mesh::CreateCubeIndicesAndUV(Mesh*)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 3.45% of 0.29 seconds
+
+index % time    self  children    called     name
+                0.27    0.00    3148/3148        Rasterizer::draw_entity(Entity const&, FrameBuffer*, std::vector<Light, std::allocator<Light> >&, Camera const&) [2]
+[1]     93.1    0.27    0.00    3148         Rasterizer::draw_triangle(Vertex const*, FrameBuffer*, std::vector<Light, std::allocator<Light> > const&, Texture const*) const [1]
+-----------------------------------------------
+                                 116             Rasterizer::draw_entity(Entity const&, FrameBuffer*, std::vector<Light, std::allocator<Light> >&, Camera const&) [2]
+[2]     93.1    0.00    0.27       0+116     Rasterizer::draw_entity(Entity const&, FrameBuffer*, std::vector<Light, std::allocator<Light> >&, Camera const&) [2]
+                0.27    0.00    3148/3148        Rasterizer::draw_triangle(Vertex const*, FrameBuffer*, std::vector<Light, std::allocator<Light> > const&, Texture const*) const [1]
+                0.00    0.00     398/404         Light::~Light() [12]
+                0.00    0.00     368/374         Light::Light(Light const&) [13]
+                                 116             Rasterizer::draw_entity(Entity const&, FrameBuffer*, std::vector<Light, std::allocator<Light> >&, Camera const&) [2]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]      3.4    0.01    0.00                 Rasterizer::RenderScene(Scene*, FrameBuffer*, Camera const&) [3]
+                0.00    0.00      19/19          FrameBuffer::display(SDL_Renderer*) [14]
+-----------------------------------------------
+                                                 <spontaneous>
+[4]      3.4    0.01    0.00                 FrameBuffer::FrameBuffer(SDL_Renderer*, unsigned int const&, unsigned int const&) [4]
+                0.00    0.00       1/1           FrameBuffer::create_ViewPort() [30]
+-----------------------------------------------
+                0.00    0.00       3/404         Scene::~Scene() [48]
+                0.00    0.00       3/404         void std::vector<Light, std::allocator<Light> >::_M_emplace_back_aux<Light>(Light&&) [63]
+                0.00    0.00     398/404         Rasterizer::draw_entity(Entity const&, FrameBuffer*, std::vector<Light, std::allocator<Light> >&, Camera const&) [2]
+[12]     0.0    0.00    0.00     404         Light::~Light() [12]
+-----------------------------------------------
+                0.00    0.00       6/374         void std::vector<Light, std::allocator<Light> >::_M_emplace_back_aux<Light>(Light&&) [63]
+                0.00    0.00     368/374         Rasterizer::draw_entity(Entity const&, FrameBuffer*, std::vector<Light, std::allocator<Light> >&, Camera const&) [2]
+[13]     0.0    0.00    0.00     374         Light::Light(Light const&) [13]
+-----------------------------------------------
+                0.00    0.00      19/19          Rasterizer::RenderScene(Scene*, FrameBuffer*, Camera const&) [3]
+[14]     0.0    0.00    0.00      19         FrameBuffer::display(SDL_Renderer*) [14]
+-----------------------------------------------
+                0.00    0.00      19/19          Camera::manage_cam(Rasterizer&, float const&) [49]
+[15]     0.0    0.00    0.00      19         Camera::manage_cam_rotation(float const&) [15]
+-----------------------------------------------
+                0.00    0.00      19/19          Camera::manage_cam(Rasterizer&, float const&) [49]
+[16]     0.0    0.00    0.00      19         Camera::manage_cam_translation(float const&) [16]
+-----------------------------------------------
+                0.00    0.00       7/15          Mesh::CreateCubeIndicesAndUV(Mesh*) [32]
+                0.00    0.00       8/15          Mesh::CreateSphere(int, int) [40]
+[17]     0.0    0.00    0.00      15         void std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int const&>(int const&) [17]
+-----------------------------------------------
+                0.00    0.00       7/14          Scene::~Scene() [48]
+                0.00    0.00       7/14          void std::vector<Entity, std::allocator<Entity> >::_M_emplace_back_aux<Entity>(Entity&&) [65]
+[18]     0.0    0.00    0.00      14         Entity::~Entity() [18]
+-----------------------------------------------
+                0.00    0.00       4/10          Mesh::CreateCubeVertices(Mesh*) [31]
+                0.00    0.00       6/10          Mesh::CreateSphere(int, int) [40]
+[19]     0.0    0.00    0.00      10         void std::vector<Vertex, std::allocator<Vertex> >::_M_emplace_back_aux<Vertex>(Vertex&&) [19]
+-----------------------------------------------
+                0.00    0.00       7/7           Mesh::CreateCubeIndicesAndUV(Mesh*) [32]
+[20]     0.0    0.00    0.00       7         void std::vector<Vec2, std::allocator<Vec2> >::_M_emplace_back_aux<Vec2 const&>(Vec2 const&) [20]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [71]
+[21]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN10RasterizerC2Ev [21]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [71]
+[22]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN11FrameBufferC2EP12SDL_RendererRKjS3_ [22]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [71]
+[23]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN4MeshC2Ev [23]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [71]
+[24]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN5LightC2ERK4Vec3fff [24]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [71]
+[25]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN5SceneD2Ev [25]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [71]
+[26]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN6CameraC2Ev [26]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [71]
+[27]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN6EntityC2Ev [27]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [71]
+[28]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN7TextureC2EPKc [28]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [71]
+[29]     0.0    0.00    0.00       1         _GLOBAL__sub_I_main [29]
+-----------------------------------------------
+                0.00    0.00       1/1           FrameBuffer::FrameBuffer(SDL_Renderer*, unsigned int const&, unsigned int const&) [4]
+[30]     0.0    0.00    0.00       1         FrameBuffer::create_ViewPort() [30]
+-----------------------------------------------
+                0.00    0.00       1/1           Mesh::CreateCube() [39]
+[31]     0.0    0.00    0.00       1         Mesh::CreateCubeVertices(Mesh*) [31]
+                0.00    0.00       4/10          void std::vector<Vertex, std::allocator<Vertex> >::_M_emplace_back_aux<Vertex>(Vertex&&) [19]
+-----------------------------------------------
+                0.00    0.00       1/1           Mesh::CreateCube() [39]
+[32]     0.0    0.00    0.00       1         Mesh::CreateCubeIndicesAndUV(Mesh*) [32]
+                0.00    0.00       7/7           void std::vector<Vec2, std::allocator<Vec2> >::_M_emplace_back_aux<Vec2 const&>(Vec2 const&) [20]
+                0.00    0.00       7/15          void std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int const&>(int const&) [17]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [21] _GLOBAL__sub_I__ZN10RasterizerC2Ev [29] _GLOBAL__sub_I_main [12] Light::~Light()
+  [22] _GLOBAL__sub_I__ZN11FrameBufferC2EP12SDL_RendererRKjS3_ [3] Rasterizer::RenderScene(Scene*, FrameBuffer*, Camera const&) [15] Camera::manage_cam_rotation(float const&)
+  [23] _GLOBAL__sub_I__ZN4MeshC2Ev [30] FrameBuffer::create_ViewPort() [16] Camera::manage_cam_translation(float const&)
+  [24] _GLOBAL__sub_I__ZN5LightC2ERK4Vec3fff [14] FrameBuffer::display(SDL_Renderer*) [18] Entity::~Entity()
+  [25] _GLOBAL__sub_I__ZN5SceneD2Ev [4] FrameBuffer::FrameBuffer(SDL_Renderer*, unsigned int const&, unsigned int const&) [1] Rasterizer::draw_triangle(Vertex const*, FrameBuffer*, std::vector<Light, std::allocator<Light> > const&, Texture const*) const
+  [26] _GLOBAL__sub_I__ZN6CameraC2Ev [31] Mesh::CreateCubeVertices(Mesh*) [20] void std::vector<Vec2, std::allocator<Vec2> >::_M_emplace_back_aux<Vec2 const&>(Vec2 const&)
+  [27] _GLOBAL__sub_I__ZN6EntityC2Ev [32] Mesh::CreateCubeIndicesAndUV(Mesh*) [19] void std::vector<Vertex, std::allocator<Vertex> >::_M_emplace_back_aux<Vertex>(Vertex&&)
+  [28] _GLOBAL__sub_I__ZN7TextureC2EPKc [13] Light::Light(Light const&) [17] void std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int const&>(int const&)
